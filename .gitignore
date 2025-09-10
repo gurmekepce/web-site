@@ -27,7 +27,6 @@ dist-ssr
 # Development files
 .bolt/
 eslint.config.js
-tsconfig.*.json
 *.log
 
 # Editor files
