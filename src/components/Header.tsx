@@ -56,7 +56,7 @@ export const Header: React.FC = () => {
             className="flex items-center gap-3 cursor-pointer bg-transparent border-none p-0"
           >
             <img 
-              src="/src/assets/logo.png" 
+              src="/logo.png" 
               alt="Gurme Kepçe Logo" 
               className="h-12 w-auto"
             />
