@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { ChefHat, ArrowDown } from 'lucide-react';
 import { Button } from './common/Button';
+import { IMAGE_URL } from '../config/site';
+
 
 export const Hero: React.FC = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -13,21 +15,23 @@ export const Hero: React.FC = () => {
 
   const scrollToServices = () => {
     const servicesElement = document.getElementById('services');
-    if (servicesElement) {
-      servicesElement.scrollIntoView({ behavior: 'smooth' });
-    }
+    if (servicesElement) servicesElement.scrollIntoView({ behavior: 'smooth' });
   };
+
+  // JSON-LD moved to index.html (global schema)
 
   return (
     <section
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
+  {/* SEO meta moved to index.html; JSON-LD rendered there globally */}
+
       {/* Parallax Background */}
       <div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: 'url(https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=1920)',
+          backgroundImage: `url(${IMAGE_URL})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
@@ -47,33 +51,24 @@ export const Hero: React.FC = () => {
           </div>
 
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-            Mükemmel
-            <span className="block text-orange-400">Catering</span>
+            Mükemmel <span className="text-orange-400 block">Catering</span>
             <span className="block">Deneyimleri</span>
           </h1>
 
           <p className="text-xl sm:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto leading-relaxed">
-            Gurme mutfağı, kusursuz hizmeti ve her damak zevkine hitap eden unutulmaz lezzet deneyimleriyle etkinliklerinizi bir üst seviyeye taşıyoruz.
+            İzmir'de Gurme mutfağı, kusursuz hizmeti ve her damak zevkine hitap eden unutulmaz lezzet deneyimleriyle etkinliklerinizi bir üst seviyeye taşıyoruz.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button
-              variant="primary"
-              size="lg"
-              onClick={scrollToServices}
-              className="animate-pulse-slow"
-            >
+            <Button variant="primary" size="lg" onClick={scrollToServices} className="animate-pulse-slow">
               Hizmetlerimizi Keşfedin
             </Button>
-
             <Button
               variant="outline"
               size="lg"
               onClick={() => {
                 const contactElement = document.getElementById('contact');
-                if (contactElement) {
-                  contactElement.scrollIntoView({ behavior: 'smooth' });
-                }
+                if (contactElement) contactElement.scrollIntoView({ behavior: 'smooth' });
               }}
             >
               Teklif Alın
@@ -83,14 +78,13 @@ export const Hero: React.FC = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 cursor-pointer animate-bounce"
+      <button
+        aria-label="Aşağı kaydır"
         onClick={scrollToServices}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 cursor-pointer animate-bounce p-2 bg-white/20 backdrop-blur-sm rounded-full"
       >
-        <div className="p-2 bg-white/20 backdrop-blur-sm rounded-full">
-          <ArrowDown size={24} className="text-white" />
-        </div>
-      </div>
+        <ArrowDown size={24} className="text-white" />
+      </button>
 
       {/* Floating Elements */}
       <div className="absolute top-20 left-10 w-20 h-20 bg-orange-400/20 rounded-full blur-xl animate-pulse"></div>

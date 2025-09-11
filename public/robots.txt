@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://gurmekepcee.vercel.app/sitemap.xml
+Host: https://gurmekepcee.vercel.app

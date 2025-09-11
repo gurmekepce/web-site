@@ -24,6 +24,11 @@ dist-ssr
 *.sw?
 .env
 
+#class
+!src/components/Gallery.tsx
+!src/components/Testimonials.tsx
+
+
 # Development files
 .bolt/
 eslint.config.js

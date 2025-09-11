@@ -10,15 +10,14 @@ export const Services: React.FC = () => {
 
   return (
     <section id="services" className="py-20 bg-gray-50">
+  {/* SEO handled in index.html */}
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           ref={elementRef}
           className={`
             text-center mb-16 transition-all duration-700 ease-out
-            ${isIntersecting
-              ? 'opacity-100 translate-y-0'
-              : 'opacity-0 translate-y-8'
-            }
+            ${isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
           `}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -47,11 +46,9 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="p-6">
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-2xl font-bold text-gray-900 group-hover:text-orange-500 transition-colors">
-                    {service.title}
-                  </h3>
-                </div>
+                <h3 className="text-2xl font-bold text-gray-900 group-hover:text-orange-500 transition-colors mb-4">
+                  {service.title}
+                </h3>
 
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   {service.description}

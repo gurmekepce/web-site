@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom animations */
 @keyframes fade-in-up {
   from {
     opacity: 0;
@@ -31,12 +30,10 @@
   animation: pulse-slow 3s ease-in-out infinite;
 }
 
-/* Smooth scrolling for all elements */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar styling */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -54,13 +51,11 @@ html {
   background: #ea580c;
 }
 
-/* Focus styles for accessibility */
 .focus\:ring-2:focus {
   outline: none;
   box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.5);
 }
 
-/* Loading spinner */
 @keyframes spin {
   to {
     transform: rotate(360deg);
@@ -71,12 +66,10 @@ html {
   animation: spin 1s linear infinite;
 }
 
-/* Image lazy loading optimization */
 img {
   loading: lazy;
 }
 
-/* Prevent layout shift during image loading */
 img[loading="lazy"] {
   opacity: 0;
   transition: opacity 0.3s;
@@ -86,7 +79,6 @@ img[loading="lazy"].loaded {
   opacity: 1;
 }
 
-/* Typography improvements */
 body {
   font-feature-settings: "kern" 1, "liga" 1;
   text-rendering: optimizeLegibility;
@@ -94,12 +86,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Enhanced hover effects */
 .group:hover .group-hover\:scale-110 {
   transform: scale(1.1);
 }
 
-/* Custom gradient backgrounds */
 .bg-gradient-to-r {
   background: linear-gradient(to right, var(--tw-gradient-stops));
 }
